@@ -24,36 +24,33 @@ export default function RapidTechDocLanding() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50 text-neutral-900">
-      <header className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <div className="bg-white p-2 rounded-2xl shadow-sm border border-neutral-100">
-            <Zap className="w-7 h-7 text-amber-500" />
-          </div>
-          <div>
-            <img
-              src="/logo-tech-futuristic.png"
-              alt="Yan TechDoc Futuristic Logo"
-              className="animate-pulse drop-shadow-[0_0_20px_rgba(0,255,255,0.7)] h-20 w-auto mb-2"
-            />
-            <h1 className="text-xl font-semibold">Yan TechDoc</h1>
-            <p className="text-sm text-neutral-500">
-              Clear technical docs, SOPs & troubleshooting — fast.
-            </p>
-          </div>
-        </div>
-        <nav className="hidden md:flex gap-6 text-sm text-neutral-600">
-          <a href="#services">Services</a>
-          <a href="#packages">Packages</a>
-          <a href="#faq">FAQ</a>
-          <a
-            href="#contact"
-            className="px-3 py-1 bg-amber-500 text-white rounded-md"
-          >
-            Contact
-          </a>
-        </nav>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100 font-sans">
+      <header className="sticky top-0 z-20 border-b border-white/5 bg-slate-950/80 backdrop-blur">
+  <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+    <div className="flex items-center gap-3">
+      <div className="bg-slate-900 p-2 rounded-2xl shadow-sm border border-white/10">
+        <Zap className="w-5 h-5 text-amber-400" />
+      </div>
+      <div>
+        <h1 className="text-lg font-semibold tracking-tight">Yan TechDoc</h1>
+        <p className="text-xs text-slate-400">
+          Clear technical docs, SOPs & troubleshooting — fast.
+        </p>
+      </div>
+    </div>
+    <nav className="hidden md:flex gap-6 text-sm text-slate-300 items-center">
+      <a href="#services" className="hover:text-white transition">Services</a>
+      <a href="#packages" className="hover:text-white transition">Packages</a>
+      <a href="#faq" className="hover:text-white transition">FAQ</a>
+      <a
+        href="#contact"
+        className="px-4 py-1.5 rounded-full bg-amber-400 text-slate-950 font-medium text-sm shadow hover:bg-amber-300 transition"
+      >
+        Contact
+      </a>
+    </nav>
+  </div>
+</header>
 
       <main className="max-w-6xl mx-auto px-6 py-12">
         <section className="grid md:grid-cols-2 gap-8 items-center">
@@ -62,10 +59,10 @@ export default function RapidTechDocLanding() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-4xl font-extrabold leading-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-sky-500 drop-shadow-[0_0_18px_rgba(56,189,248,0.45)]">
               Professional technical documentation — delivered in 24 hours.
             </h2>
-            <p className="mt-4 text-neutral-600">
+            <p className="mt-4 text-slate-300">
               Transform messy notes, screenshots, logs, or ticket threads into
               clear SOPs, troubleshooting guides, and customer-ready
               communications. High accuracy for IT, PLC/automation, SQL, and
@@ -100,7 +97,20 @@ export default function RapidTechDocLanding() {
               </li>
             </ul>
 
-            <div className="mt-6 flex gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
+  <a
+    href="#contact"
+    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-400 text-slate-950 font-medium text-sm shadow hover:bg-amber-300 transition"
+  >
+    Get a 24h Quote
+  </a>
+  <a
+    href="#packages"
+    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-slate-500/70 text-slate-100 text-sm hover:border-slate-300 hover:bg-slate-900/60 transition"
+  >
+    See Packages
+  </a>
+</div>
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 text-white rounded-md shadow"
@@ -122,7 +132,7 @@ export default function RapidTechDocLanding() {
             transition={{ duration: 0.5 }}
             className="bg-white p-6 rounded-2xl shadow-md border border-neutral-100"
           >
-            <h3 className="text-lg font-semibold">
+            <h3 className="text-2xl font-semibold text-slate-50">
               Sample 24h Turnaround Offer
             </h3>
             <p className="text-sm text-neutral-600 mt-2">
@@ -365,24 +375,26 @@ export default function RapidTechDocLanding() {
 
 function ServiceCard({ title, desc }) {
   return (
-    <div className="bg-white p-4 rounded-xl border shadow-sm">
-      <h4 className="font-semibold">{title}</h4>
-      <div className="text-sm text-neutral-600 mt-2">{desc}</div>
+    <div className="bg-slate-900/70 p-4 rounded-xl border border-white/10 shadow-sm">
+      <h4 className="font-semibold text-slate-50">{title}</h4>
+      <div className="text-sm text-slate-300 mt-2">{desc}</div>
     </div>
   );
 }
 
 function PackageCard({ title, price, eta, bullets }) {
   return (
-    <div className="p-4 rounded-xl border bg-neutral-50">
+    <div className="p-4 rounded-xl border border-white/10 bg-slate-900/70 shadow-sm">
       <div className="flex items-center justify-between">
         <div>
-          <div className="text-sm text-neutral-500">{title}</div>
-          <div className="text-2xl font-bold">{price}</div>
+          <div className="text-xs uppercase tracking-wide text-slate-400">
+            {title}
+          </div>
+          <div className="text-2xl font-bold text-slate-50">{price}</div>
         </div>
-        <div className="text-sm">{eta}</div>
+        <div className="text-xs text-slate-400">{eta}</div>
       </div>
-      <ul className="mt-3 text-sm text-neutral-600 list-disc pl-5">
+      <ul className="mt-3 text-sm text-slate-300 list-disc pl-5 space-y-1">
         {bullets.map((b, i) => (
           <li key={i}>{b}</li>
         ))}
