@@ -19,6 +19,25 @@ body {
 a {
   color: inherit;
 }
+.section {
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 88px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #22d3ee, #a78bfa);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.18);
+}
 
 /* Layout wrappers */
 
@@ -381,19 +400,53 @@ a {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-
 .feature-card {
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
+  position: relative;
+  border-radius: 14px;
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
   padding: 18px 22px;
-  font-size: 15px;           /* larger text */
+  font-size: 15px;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.06),
+    0 0 0 1px rgba(34, 211, 238, 0.06) inset;
+
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.55), rgba(34, 211, 238, 0.45), rgba(167, 139, 250, 0.40));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34, 211, 238, 0.35);
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.10),
+    0 0 0 1px rgba(34, 211, 238, 0.10) inset;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
 }
 
 .feature-card-title {
-  font-weight: 700;
-  font-size: 18px;           /* bigger */
-  margin-bottom: 6px;
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 
 /* Packages */

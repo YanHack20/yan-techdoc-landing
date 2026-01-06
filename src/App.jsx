@@ -1,5 +1,6 @@
-import RapidTechDocLanding from "./RapidTechDocLanding";
+import "./App.css";
+import YanAIAutomationLanding from "./YanAIAutomationLanding";
 
 export default function App() {
-  return <RapidTechDocLanding />;
+  return <YanAIAutomationLanding />;
 }
