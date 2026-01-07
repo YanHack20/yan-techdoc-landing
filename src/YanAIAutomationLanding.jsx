@@ -119,7 +119,7 @@ export default function YanAIAutomationLanding() {
   };
 
   try {
-    const res = await fetch("/api/Lead", {
+    const res = await fetch("/api/lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
