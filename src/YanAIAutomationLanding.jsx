@@ -119,7 +119,7 @@ export default function YanAIAutomationLanding() {
   };
 
   try {
-    const res = await fetch("/api/lead", {
+    const res = await fetch("/api/Lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -161,7 +161,7 @@ if (data && data.ok === false) {
 
   return (
     
-    <div className="page"> <h1 style={{ color: "red" }}>RENDER TEST</h1>
+    <div className="page">
       {/* HEADER */}
       <header className="header">
         <div className="header-inner">
@@ -370,16 +370,10 @@ if (data && data.ok === false) {
                 </div>
 
                 <p className="form-note">
-                  By clicking <strong>Request demo</strong>, your email client
-                  will open with a pre-filled message to{" "}
-                  <a
-                    href="mailto:support@yantechdoc.com"
-                    style={{ textDecoration: "underline", color: "#bfdbfe" }}
-                  >
-                    support@yantechdoc.com
-                  </a>
-                  .
-                </p>
+  By clicking <strong>Request demo</strong>, your request is sent securely and
+  we’ll respond within 24 hours.
+</p>
+
 
              <button
   type="submit"
